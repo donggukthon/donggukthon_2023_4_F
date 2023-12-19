@@ -2,6 +2,7 @@ import styled from "styled-components";
 import volunmateLogo from "../../assets/Logo/volunmate.svg";
 import postWriteBtn from "../../assets/Button/postWrite.svg";
 import uploadPost from "../../assets/Button/uploadPost.svg";
+import applyBtn from "../../assets/Button/applyButton.svg";
 
 const Container = styled.div`
   display: flex;
@@ -39,7 +40,7 @@ const BoldFont = styled.p`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  margin: 0 0 10px 0;
+  /* margin: 0 0 10px 0; */
 `;
 
 const LightFont = styled.p`
@@ -146,15 +147,14 @@ const WhiteFont = styled.p`
 `;
 
 // Post관련
-
 const PostContainer = styled.div`
   width: 340px;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
-  background-color: skyblue;
+  align-items: flex-start;
+  background-color: white;
   overflow-y: scroll;
   border: 1px solid black;
   /* position: relative; */
@@ -168,6 +168,51 @@ const PostImg = styled.img`
   height: 243px;
   background-color: #f3fffa;
   alt="썸네일";
+`;
+
+// 신청하기 버튼
+const ApplyButton = styled.button`
+  background-image: url(${applyBtn});
+  width: 296px;
+  height: 43px;
+`;
+
+// Post 유저 정보 섹션
+const PostUserSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+`;
+
+const Hr = styled.div`
+  width: 300px; /* 선의 너비 */
+  height: 1px; /* 선의 높이 */
+  background-color: black; /* 선의 색상 */
+`;
+
+const PostFont = styled.p`
+  color: #000;
+
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 1000;
+  line-height: 21.851px;
+`;
+
+const GoogleMapImg = styled.div`
+  width: 259px;
+  height: 104px;
+  flex-shrink: 0;
+  background-color: yellow;
+`;
+
+const PostTextArea = styled.textarea`
+  width: 300px;
+  min-height: 150px;
+  maring-left: 300px;
+  border: 0px;
 `;
 
 export const S = {
@@ -197,4 +242,10 @@ export const M = {
 export const P = {
   PostContainer,
   PostImg,
+  ApplyButton,
+  PostUserSection,
+  Hr,
+  PostFont,
+  GoogleMapImg,
+  PostTextArea,
 };
