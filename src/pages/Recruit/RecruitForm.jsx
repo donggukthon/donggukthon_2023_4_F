@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import Calendar from "../../components/Recruit/Calendar/Calendar";
 import DaumPostcode from "react-daum-postcode";
-import { S, F } from "./style";
+import { S, F, M } from "./style";
 import ZipCodeInput from "../../components/Recruit/Address/ZipCodeInput";
 
 function RecruitForm() {
@@ -9,6 +9,7 @@ function RecruitForm() {
   const [modalState, setModalState] = useState(false); // 모달 상태 관리
   const [inputAddress, setInputAddress] = useState(""); // 주소 상태 관리
   const [inputZipCode, setInputZipCode] = useState(""); // 우편번호 상태 관리
+  const [showConfirmModal, setShowConfirmModal] = useState(false); // 모달 관리
   const thumbnailInput = useRef();
 
   const inputText = (event) => {
@@ -69,6 +70,21 @@ function RecruitForm() {
       // 이미지 업로드 실패
     }
   };
+
+  //모달 관련
+  const handleUploadClick = () => {
+    setShowConfirmModal(true);
+  };
+
+  const handleConfirm = () => {
+    // POST 요청을 여기서 처리
+    setShowConfirmModal(false);
+  };
+
+  const handleCancel = () => {
+    setShowConfirmModal(false);
+  };
+
   return (
     <S.Container>
       <S.CardBox>
@@ -145,10 +161,36 @@ function RecruitForm() {
         </div>
         <input placeholder="#장충동#목도리#봉사자모집#겨울봉사"></input>
 
-        <F.UploadButton />
+        <F.UploadButton onClick={handleUploadClick} />
+        <ConfirmModal
+          show={showConfirmModal}
+          onConfirm={handleConfirm}
+          onCancel={handleCancel}
+        />
       </S.CardBox>
     </S.Container>
   );
+
+  function ConfirmModal({ show, onConfirm, onCancel }) {
+    if (!show) {
+      return null;
+    }
+
+    return (
+      <M.ModalBox>
+        <p>Volunmate</p>
+        <p>글을 등록하시겠습니까?</p>
+        <M.RowBox>
+          <M.ModalButton onClick={onConfirm}>
+            <M.WhiteFont>등록할게요</M.WhiteFont>
+          </M.ModalButton>
+          <M.ModalButton onClick={onCancel}>
+            <M.WhiteFont>하지 않는다</M.WhiteFont>
+          </M.ModalButton>
+        </M.RowBox>
+      </M.ModalBox>
+    );
+  }
 }
 
 export default RecruitForm;

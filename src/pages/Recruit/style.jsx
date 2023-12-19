@@ -84,6 +84,7 @@ const CardBox = styled.div`
   /* overflow-x: auto; */
   /* overflow: auto; */
 `;
+
 // recruitForm.jsx
 const WirteButton = styled.button`
   background-image: url(${postWriteBtn});
@@ -106,6 +107,44 @@ const CalendarDiv = styled.div`
   border: 1px solid black;
 `;
 
+// 모달 관련
+const ModalBox = styled.div`
+  width: 333px;
+  height: 176px;
+  position: fixed;
+  top: 35%;
+  left: 5%;
+  z-index: 100;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+const RowBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+`;
+
+const ModalButton = styled.button`
+  width: 145px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 4.459px;
+  background-color: #878d91;
+`;
+
+const WhiteFont = styled.p`
+  /* font-color: white; */
+  color: white;
+`;
+
 export const S = {
   Container,
   Logo,
@@ -121,4 +160,11 @@ export const F = {
   FormFont,
   CalendarDiv,
   UploadButton,
+};
+
+export const M = {
+  ModalBox,
+  RowBox,
+  ModalButton,
+  WhiteFont,
 };
