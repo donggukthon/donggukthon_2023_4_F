@@ -8,7 +8,6 @@ import "./registration.css"; // CSS 파일 import
 
 function Registration() {
 
-
     return (
         <div className="container">
             <img src={backImg} alt="Back Img" className="back-img" />
