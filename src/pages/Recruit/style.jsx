@@ -164,8 +164,8 @@ const PostContainer = styled.div`
 `;
 
 const PostImg = styled.img`
-  width: 380px;
-  height: 98px;
+  width: 390px;
+  height: 243px;
   background-color: #f3fffa;
   alt="썸네일";
 `;
