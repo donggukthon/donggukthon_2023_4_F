@@ -12,9 +12,9 @@ const CardContainer = styled.div`
   width: 330px;
   height: 142px;
   background-color: yellow;
-  margin: auto;
+  /* margin: auto; */
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 `;
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { S } from "./style";
+import volunmateLogo from "../../assets/Logo/volunmate.svg";
 
 function RecruitCard() {
   return (

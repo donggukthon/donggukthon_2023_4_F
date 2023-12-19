@@ -4,6 +4,7 @@ import volunmateLogo from "../../assets/Logo/volunmate.svg";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 const Logo = styled.img.attrs({
@@ -45,10 +46,26 @@ const LightFont = styled.p`
   margin: 0;
 `;
 
+const CardBox = styled.div`
+  width: 332px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: skyblue;
+  overflow-y: auto;
+  position: relative;
+
+  /* overflow-x: auto; */
+  /* overflow: auto; */
+`;
+
 export const S = {
   Container,
   Logo,
   RecruitTitleBox,
   BoldFont,
   LightFont,
+  CardBox,
 };
