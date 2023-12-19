@@ -5,9 +5,9 @@ import volunmateLogo from "../../assets/Logo/volunmate.svg";
 function RecruitCard() {
   return (
     <S.CardContainer>
-      <S.CardImg src={volunmateLogo} />
       <S.TextContainer>
         <S.BoldFont>목도리 뜨기 봉사 팀원 모집</S.BoldFont>
+        <p>Voiasd</p>
         <S.LightFont>봉자 일자 | 2023. 11. 13</S.LightFont>
         <p>
           <S.LocationIcon />
