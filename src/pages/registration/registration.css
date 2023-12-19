@@ -22,7 +22,16 @@ body {
     font-weight: 700;
     line-height: normal;
     margin-bottom: 10px;
+}
 
+.stmt {
+    color: var(--Basic-Text-Color, #878D91);
+    text-align: center;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 /* Back 이미지 스타일 조정 */
@@ -44,4 +53,20 @@ input {
     border: 1px solid var(--grey-5, #A9AFB3);
     background: #FFF;
     margin-bottom: 20px;
+}
+
+.address {
+    width: 298px;
+    height: 53.834px;
+    flex-shrink: 0;
+    border-radius: 17.507px;
+    border: 1px solid #A9AFB3;
+    background: #FFF;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 53px;
 }
