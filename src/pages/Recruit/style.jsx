@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import volunmateLogo from "../../assets/Logo/volunmate.svg";
+import postWriteBtn from "../../assets/Button/postWrite.svg";
 
 const Container = styled.div`
   display: flex;
@@ -61,6 +62,12 @@ const CardBox = styled.div`
   /* overflow: auto; */
 `;
 
+const WirteButton = styled.button`
+  background-image: url(${postWriteBtn});
+  width: 296px;
+  height: 43px;
+`;
+
 export const S = {
   Container,
   Logo,
@@ -68,4 +75,5 @@ export const S = {
   BoldFont,
   LightFont,
   CardBox,
+  WirteButton,
 };

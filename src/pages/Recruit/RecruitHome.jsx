@@ -16,6 +16,7 @@ function RecruitHome() {
         <RecruitCard />
         <RecruitCard />
       </S.CardBox>
+      <S.WirteButton />
     </S.Container>
   );
 }
