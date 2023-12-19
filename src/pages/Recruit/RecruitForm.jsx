@@ -138,6 +138,12 @@ function RecruitForm() {
             style={{ display: "none" }}
           />
         </button>
+
+        <div>
+          <F.ColoredFormFont>태그</F.ColoredFormFont>
+          <F.FormFont>를 입력해주세요</F.FormFont>
+        </div>
+        <input placeholder="#장충동#목도리#봉사자모집#겨울봉사"></input>
       </S.CardBox>
     </S.Container>
   );
