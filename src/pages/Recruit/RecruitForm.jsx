@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { S, F } from "./style";
 import Calendar from "../../components/Recruit/Calendar/Calendar";
 
 function RecruitForm() {
+  const [inputValue, setInputValue] = useState("");
+
+  const inputText = (event) => {
+    setInputValue(event.target.value);
+    console.log(event.target.value);
+  };
   return (
     <S.Container>
       <S.CardBox>
@@ -20,7 +26,7 @@ function RecruitForm() {
           <F.ColoredFormFont>활동 인원</F.ColoredFormFont>
           <F.FormFont>을 선택해주세요</F.FormFont>
         </div>
-        <F.CalendarDiv />
+        <input value={inputValue} onChange={inputText} />
         <div>
           <F.ColoredFormFont>활동 장소</F.ColoredFormFont>
           <F.FormFont>을 선택해주세요</F.FormFont>
