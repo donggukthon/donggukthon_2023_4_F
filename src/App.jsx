@@ -31,14 +31,19 @@ function App() {
     height: 37px;
     margin-left: 10px;
   `;
+  const RoutesContainerStyled = styled.div`
+    margin-bottom: 63px; // Footer 높이보다 약간 더 크게 설정
+  `;
 
   return (
     <Router>
       <Reset />
+      {/* Header */}
       <CardImg>
         <Backbutton />
       </CardImg>
       <RoutesContainer />
+      <RoutesContainerStyled />
       <Footer />
     </Router>
   );

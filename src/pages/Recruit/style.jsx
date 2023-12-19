@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import volunmateLogo from "../../assets/Logo/volunmate.svg";
 import postWriteBtn from "../../assets/Button/postWrite.svg";
+import uploadPost from "../../assets/Button/uploadPost.svg";
 
 const Container = styled.div`
   display: flex;
@@ -9,6 +10,8 @@ const Container = styled.div`
   justify-content: center;
   width: 100%;
   border: 1px solid black;
+  overflow-y: scroll;
+  height: 100%;
 `;
 
 const Logo = styled.img.attrs({
@@ -69,14 +72,14 @@ const FormFont = styled.p`
 
 const CardBox = styled.div`
   width: 332px;
-  height: 600px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   background-color: skyblue;
-  overflow-y: auto;
-  position: relative;
+  overflow-y: scroll;
+  /* position: relative; */
 
   /* overflow-x: auto; */
   /* overflow: auto; */
@@ -86,6 +89,14 @@ const WirteButton = styled.button`
   background-image: url(${postWriteBtn});
   width: 296px;
   height: 43px;
+`;
+
+const UploadButton = styled.button`
+  background-image: url(${uploadPost});
+  background-repeat: no-repeat;
+  width: 296px;
+  height: 43px;
+  padding: 0px;
 `;
 
 const CalendarDiv = styled.div`
@@ -109,4 +120,5 @@ export const F = {
   ColoredFormFont,
   FormFont,
   CalendarDiv,
+  UploadButton,
 };

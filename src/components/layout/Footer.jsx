@@ -8,13 +8,16 @@ import footerMyPage from "../../assets/Button/footerMyPage.svg";
 
 function Footer() {
   const FooterContainer = styled.div`
-    width: 100%;
+    /* width: 100%; */
     height: 64px;
     background-color: pink;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
   `;
 
   const HomeBtn = styled.button`
