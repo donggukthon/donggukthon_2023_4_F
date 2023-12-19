@@ -6,7 +6,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
+  border: 1px solid black;
 `;
 
 const Logo = styled.img.attrs({
@@ -48,6 +50,23 @@ const LightFont = styled.p`
   margin: 0;
 `;
 
+const ColoredFormFont = styled.p`
+  color: #82aa9b;
+  font-family: Inter;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18.166px; /* 95.611% */
+`;
+
+const FormFont = styled.p`
+  font-family: Inter;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18.166px; /* 95.611% */
+`;
+
 const CardBox = styled.div`
   width: 332px;
   height: 600px;
@@ -62,11 +81,18 @@ const CardBox = styled.div`
   /* overflow-x: auto; */
   /* overflow: auto; */
 `;
-
+// recruitForm.jsx
 const WirteButton = styled.button`
   background-image: url(${postWriteBtn});
   width: 296px;
   height: 43px;
+`;
+
+const CalendarDiv = styled.div`
+  width: 233px;
+  height: 45px;
+  background-color: pink;
+  border: 1px solid black;
 `;
 
 export const S = {
@@ -77,4 +103,10 @@ export const S = {
   LightFont,
   CardBox,
   WirteButton,
+};
+
+export const F = {
+  ColoredFormFont,
+  FormFont,
+  CalendarDiv,
 };

@@ -1,0 +1,15 @@
+.example-custom-input {
+  padding: 10px 15px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.example-custom-input:hover {
+  background-color: gray;
+}
+
+/* 추가적인 달력 스타일링을 여기에 적용하세요 */

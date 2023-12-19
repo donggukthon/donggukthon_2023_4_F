@@ -6,7 +6,6 @@ import styled from "styled-components";
 
 import volunmateLogo from "./assets/Logo/volunmate.svg";
 import backButton from "./assets/Button/backButton.svg";
-
 import Footer from "./components/layout/Footer";
 
 function App() {
