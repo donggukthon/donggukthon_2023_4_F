@@ -1,0 +1,23 @@
+.modifyButton {
+    width: 101px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #9ED2BE;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 35px;
+}
+
+.line {
+    width: 332px;
+    height: 1px;
+    background: #D9D9D9;
+    position: relative;
+    top: auto;
+    left: 27px;
+}
