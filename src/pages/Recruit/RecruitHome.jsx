@@ -1,8 +1,14 @@
 import React from "react";
 import { S } from "./style";
 import RecruitCard from "../../components/Recruit/RecruitCard.jsx";
+import { useNavigate } from "react-router-dom";
 
 function RecruitHome() {
+  const navigate = useNavigate();
+
+  const goToForm = () => {
+    navigate(`/recruitForm`);
+  };
   return (
     <S.Container>
       <S.RecruitTitleBox>
@@ -16,7 +22,7 @@ function RecruitHome() {
         <RecruitCard />
         <RecruitCard />
       </S.CardBox>
-      <S.WirteButton />
+      <S.WirteButton onClick={goToForm} />
     </S.Container>
   );
 }
