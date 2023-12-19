@@ -5,6 +5,7 @@ import { routes } from "./routes";
 import styled from "styled-components";
 
 import volunmateLogo from "./assets/Logo/volunmate.svg";
+import backButton from "./assets/Button/backButton.svg";
 
 import Footer from "./components/layout/Footer";
 
@@ -19,24 +20,25 @@ function App() {
     /* position: sticky; */
     top: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
   `;
 
-  const FooterContainer = styled.div`
-    width: 100%;
-    height: 64px;
-    background-color: pink;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  const Backbutton = styled.button`
+    background-image: url(${backButton});
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 37px;
+    height: 37px;
+    margin-left: 10px;
   `;
 
   return (
     <Router>
       <Reset />
-      <CardImg src={volunmateLogo} />
+      <CardImg>
+        <Backbutton />
+      </CardImg>
       <RoutesContainer />
       <Footer />
     </Router>
