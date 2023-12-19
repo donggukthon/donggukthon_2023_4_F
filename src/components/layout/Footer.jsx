@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import footerHome from "../../assets/Button/footerHome.svg";
-import footerRecruit from "../../assets/Button/footerRecruit.svg";
-import footerHelp from "../../assets/Button/footerHelp.svg";
-import footerMyPage from "../../assets/Button/footerMyPage.svg";
+import footerHome from "../../assets/Button/footer/footerHome.svg";
+import footerRecruit from "../../assets/Button/footer/footerRecruit.svg";
+import footerHelp from "../../assets/Button/footer/footerHelp.svg";
+import footerMyPage from "../../assets/Button/footer/footerMyPage.svg";
 
 function Footer() {
   const FooterContainer = styled.div`
