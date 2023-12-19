@@ -3,6 +3,7 @@ import Calendar from "../../components/Recruit/Calendar/Calendar";
 import DaumPostcode from "react-daum-postcode";
 import { S, F, M } from "./style";
 import ZipCodeInput from "../../components/Recruit/Address/ZipCodeInput";
+import { useNavigate } from "react-router-dom";
 
 function RecruitForm() {
   const [inputValue, setInputValue] = useState("");
@@ -11,6 +12,7 @@ function RecruitForm() {
   const [inputZipCode, setInputZipCode] = useState(""); // 우편번호 상태 관리
   const [showConfirmModal, setShowConfirmModal] = useState(false); // 모달 관리
   const thumbnailInput = useRef();
+  const navigate = useNavigate();
 
   const inputText = (event) => {
     setInputValue(event.target.value);
@@ -79,10 +81,12 @@ function RecruitForm() {
   const handleConfirm = () => {
     // POST 요청을 여기서 처리
     setShowConfirmModal(false);
+    navigate(`/recruitPost`);
   };
 
   const handleCancel = () => {
     setShowConfirmModal(false);
+    navigate(`/recruitHome`);
   };
 
   return (

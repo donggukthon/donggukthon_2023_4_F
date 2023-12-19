@@ -79,6 +79,7 @@ const CardBox = styled.div`
   align-items: center;
   background-color: skyblue;
   overflow-y: scroll;
+  border: 1px solid black;
   /* position: relative; */
 
   /* overflow-x: auto; */
@@ -141,8 +142,32 @@ const ModalButton = styled.button`
 `;
 
 const WhiteFont = styled.p`
-  /* font-color: white; */
   color: white;
+`;
+
+// Post관련
+
+const PostContainer = styled.div`
+  width: 340px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: skyblue;
+  overflow-y: scroll;
+  border: 1px solid black;
+  /* position: relative; */
+
+  /* overflow-x: auto; */
+  /* overflow: auto; */
+`;
+
+const PostImg = styled.img`
+  width: 380px;
+  height: 98px;
+  background-color: #f3fffa;
+  alt="썸네일";
 `;
 
 export const S = {
@@ -167,4 +192,9 @@ export const M = {
   RowBox,
   ModalButton,
   WhiteFont,
+};
+
+export const P = {
+  PostContainer,
+  PostImg,
 };
