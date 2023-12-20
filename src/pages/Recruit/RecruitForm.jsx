@@ -10,8 +10,8 @@ function RecruitForm() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [tag, setTag] = useState([]);
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
   const [dueDate, setDueDate] = useState(new Date());
   const [person, setPerson] = useState();
   const [latitude, setLatitude] = useState();
