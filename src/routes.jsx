@@ -4,6 +4,8 @@ import RecruitForm from "./pages/Recruit/RecruitForm";
 import RecruitPost from "./pages/Recruit/RecruitPost";
 import MainHome from "./pages/Home/MainHome";
 import MyPage from "./pages/MyPage/MyPage";
+import HelpHome from "./pages/Help/HelpHome";
+
 
 export const routes = [
   {
@@ -15,6 +17,7 @@ export const routes = [
       { path: "/recruitPost", element: <RecruitPost /> }, // 팀원모집 디테일 페이지
       { path: "/mainHome", element: <MainHome /> }, // 메인 페이지
       { path: "/myPage", element: <MyPage /> }, // 메인 페이지
+      { path: "/helpHome", element: <HelpHome /> }, // 도와주세요 홈
     ],
   },
 ];
