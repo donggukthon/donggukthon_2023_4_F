@@ -46,10 +46,47 @@ const WriteButton = styled.button`
   font-weight: 700;
 `
 
+const CardBox = styled.div`
+  width: 380px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: skyblue;
+  overflow-y: scroll;
+  border: 1px solid black;
+  text-align: left;
+  /* position: relative; */
+
+  /* overflow-x: auto; */
+  /* overflow: auto; */
+`;
+
+const InputTitle = styled.div`
+  font-family: Inter;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 800;
+  text-align: left;
+`;
+
+const Input = styled.input`
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+`;
+
+
 export const S = {
-    Container,
-    HelpTitleBox,
-    BoldFont,
-    LightFont,
-    WriteButton
+  Container,
+  HelpTitleBox,
+  BoldFont,
+  LightFont,
+  WriteButton,
+  CardBox,
+  InputTitle,
+  Input
 };

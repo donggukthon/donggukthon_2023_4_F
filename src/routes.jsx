@@ -5,6 +5,7 @@ import RecruitPost from "./pages/Recruit/RecruitPost";
 import MainHome from "./pages/Home/MainHome";
 import HelpHome from "./pages/Help/HelpHome";
 import HelpPost from "./pages/Help/HelpPost";
+import HelpDetail from "./pages/Help/HelpDetail";
 import MyPage from "./pages/MyPage/Main";
 import MyVolunmate from "./pages/MyPage/MyVolunmate";
 
@@ -20,6 +21,7 @@ export const routes = [
       { path: "/myPage", element: <MyPage /> }, // 메인 페이지
       { path: "/helpHome", element: <HelpHome /> }, // 도와주세요 홈
       { path: "/helpPost", element: <HelpPost /> }, // 도와주세요 글 쓰기 페이지
+      { path: "/helpDetail", element: <HelpDetail /> }, // 도와주세요 디테일 페이지
       { path: "/myVolunmate", element: <MyVolunmate /> },
     ],
   },
