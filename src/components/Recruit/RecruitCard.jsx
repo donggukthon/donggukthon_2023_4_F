@@ -6,6 +6,7 @@ function RecruitCard() {
   return (
     <S.CardContainer>
       <S.CardImg src={volunmateLogo} />
+
       <S.TextContainer>
         <S.BoldFont>목도리 뜨기 봉사 팀원 모집</S.BoldFont>
         <S.LightFont>봉자 일자 | 2023. 11. 13</S.LightFont>
@@ -18,6 +19,7 @@ function RecruitCard() {
           23.11.11 모집 마감
         </p>
       </S.TextContainer>
+      <S.TemperContainer>온도계 하트</S.TemperContainer>
     </S.CardContainer>
   );
 }

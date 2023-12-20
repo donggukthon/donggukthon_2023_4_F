@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { S, P, M } from "./style";
 import RecruitCard from "../../components/Recruit/RecruitCard.jsx";
 import { useNavigate } from "react-router-dom";
 
 function RecruitPost() {
+  const [showConfirmModal, setShowConfirmModal] = useState(false); // 모달 관리
   const navigate = useNavigate();
 
-  const goToForm = () => {
-    navigate(`/recruitForm`);
+  //모달 관련
+  const handleUploadClick = () => {
+    setShowConfirmModal(true);
   };
+
+  const handleConfirm = () => {
+    // POST 요청을 여기서 처리
+    setShowConfirmModal(false);
+    // navigate(`/recruitPost`);
+  };
+
+  const handleCancel = () => {
+    setShowConfirmModal(false);
+    // navigate(`/recruitHome`);
+  };
+
   return (
     <S.Container>
       <P.PostImg />
@@ -49,9 +63,35 @@ function RecruitPost() {
           <p>삭제</p>
         </M.RowBox>
       </P.PostContainer>
-      <P.ApplyButton onClick={goToForm} />
+      <P.ApplyButton onClick={handleUploadClick} />
+      <ConfirmModal
+        show={showConfirmModal}
+        onConfirm={handleConfirm}
+        onCancel={handleCancel}
+      />
     </S.Container>
   );
+
+  function ConfirmModal({ show, onConfirm, onCancel }) {
+    if (!show) {
+      return null;
+    }
+
+    return (
+      <M.ModalBox>
+        <p>Volunmate</p>
+        <p>봉사 신청 하시겠습니까?</p>
+        <M.RowBox>
+          <M.ModalButton onClick={onConfirm}>
+            <M.WhiteFont>신청할게요</M.WhiteFont>
+          </M.ModalButton>
+          <M.ModalButton onClick={onCancel}>
+            <M.WhiteFont>고민 해볼게요</M.WhiteFont>
+          </M.ModalButton>
+        </M.RowBox>
+      </M.ModalBox>
+    );
+  }
 }
 
 export default RecruitPost;
