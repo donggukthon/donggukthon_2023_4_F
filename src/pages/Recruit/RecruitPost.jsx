@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { S, P, M } from "./style";
 import RecruitCard from "../../components/Recruit/RecruitCard.jsx";
 import { useNavigate } from "react-router-dom";
+// import Googlemap from "../../componentes/Recruit/GoogleMap/Googlemap";
+import Googlemap from "../../components/Recruit/GoogleMap/Googlemap";
 
 function RecruitPost() {
   const [showConfirmModal, setShowConfirmModal] = useState(false); // 모달 관리
@@ -48,7 +50,8 @@ function RecruitPost() {
           <p>0일동안 진행 예정</p>
           <P.PostFont>봉사 장소</P.PostFont>
           <p>서울특별시 중구 필동</p>
-          <P.GoogleMapImg />
+          {/* <P.GoogleMapImg /> */}
+          <Googlemap />
         </P.PostUserSection>
         <P.Hr />
         <P.PostUserSection>
