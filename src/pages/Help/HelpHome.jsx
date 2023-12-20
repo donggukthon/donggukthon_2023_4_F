@@ -15,10 +15,10 @@ function HelpHome() {
     };
 
     const handleCardClick = () => {
-        // /homeDetail 경로로 이동
-        console.log("Card clicked!");
+        // /helpDetail 경로로 이동
         navigate("/helpDetail");
     };
+
 
     return (
         <S.Container>
@@ -28,10 +28,12 @@ function HelpHome() {
                     내 주변에 도움이 필요한 곳을 찾아 바로 나눔과 봉사를 실천해요!
                 </S.LightFont>
             </S.HelpTitleBox>
-            <HelpCard onClick={handleCardClick} />
-            <HelpCard2 onClick={handleCardClick} />
-            <HelpCard3 onClick={handleCardClick} />
-            <HelpCard4 onClick={handleCardClick} />
+            <S.CardContainer onClick={handleCardClick} >
+                <HelpCard />
+            </S.CardContainer>
+            <HelpCard2 />
+            <HelpCard3 />
+            <HelpCard4 />
             {/* WriteButton에 onClick 이벤트 추가 */}
             <S.WriteButton onClick={handleWriteButtonClick}>
                 도움 요청하기

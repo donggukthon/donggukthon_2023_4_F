@@ -69,16 +69,63 @@ const InputTitle = styled.div`
   font-style: normal;
   font-weight: 800;
   text-align: left;
+  margin: 50px 10px 0px 10px;
 `;
 
-const Input = styled.input`
-  width: 80%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+const InputContent = styled.div`
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  text-align: left;
+  margin: 20px 10px 0px 10px;
 `;
 
+const Input = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px 0px 20px;
+`;
+
+const CardContainer = styled.div`
+
+`;
+
+const CardImg = styled.img`
+  width: 390px;
+  height: 252px;
+  flex-shrink: 0;
+  alt:"포스트 카드 이미지";
+`;
+
+const Info = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  justify-content: space-between;
+`;
+
+const HurryImg = styled.img`
+  width: 36px;
+  height: 35px;
+  flex-shrink: 0;
+  padding-right: 30px;
+`;
+
+const Address = styled.img`
+  width: 138px;
+  height: 40px;
+  flex-shrink: 0;
+  padding-left: 10px;
+`;
+
+const HorizontalLine = styled.div`
+margin-top: 30px;
+width: 380px;
+opacity: 0.2;
+        height: 0.5px; /* 원하는 높이 설정 */
+        background-color: #000; /* 원하는 선의 색상 설정 */
+`;
 
 export const S = {
   Container,
@@ -88,5 +135,12 @@ export const S = {
   WriteButton,
   CardBox,
   InputTitle,
-  Input
+  Input,
+  CardContainer,
+  CardImg,
+  InputContent,
+  HurryImg,
+  Info,
+  Address,
+  HorizontalLine
 };
