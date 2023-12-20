@@ -22,8 +22,14 @@ const CardImg = styled.img`
   width: 106px;
   height: 106px;
   flex-shrink: 0;
-  border: 1px solid black;
+  border-radius: 5px;
   alt:"포스트 카드 이미지";
+`;
+
+const HurryImg = styled.img`
+  width: 36px;
+  height: 35px;
+  flex-shrink: 0;
 `;
 
 const BoldFont = styled.p`
@@ -57,30 +63,36 @@ const TextContainer = styled.div`
 const TemperContainer = styled.div`
   display: flex;
   flex-direction: column;
+  font-size: 10px;
+  justify-content: center;
+  align-items: center;
+  color: #D85B53;
+  font-weight: 800;
 `;
 
 const LocationIcon = styled.img.attrs({
-    src: location,
+  src: location,
 })`
   width: 10px;
   height: 10px;
 `;
 
 const ClockIcon = styled.img.attrs({
-    src: clock,
+  src: clock,
 })`
   width: 10px;
   height: 10px;
 `;
 
 export const S = {
-    Container,
-    CardContainer,
-    BoldFont,
-    LightFont,
-    CardImg,
-    TextContainer,
-    LocationIcon,
-    ClockIcon,
-    TemperContainer,
+  Container,
+  CardContainer,
+  BoldFont,
+  LightFont,
+  CardImg,
+  TextContainer,
+  LocationIcon,
+  ClockIcon,
+  TemperContainer,
+  HurryImg
 };
