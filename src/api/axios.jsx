@@ -11,7 +11,9 @@ const instance = axios.create({
 instance.interceptors.request.use(
   (config) => {
     // 로컬 스토리지에서 토큰 가져오기
-    const token = localStorage.getItem("token");
+    // const token = localStorage.getItem("token");
+    const token =
+      "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzb2NpYWxJZCI6IjExMTI4ODk4NzU0ODc4NDkxNjk0NSIsImlhdCI6MTcwMzAyOTQwOSwiZXhwIjoxNzAzMTE1ODA5fQ.LGWDzOhVatSSWAbGvJpdBAc-ByiqlUkhtfzUPhdILy0";
 
     // 헤더에 토큰 추가
     if (token) {

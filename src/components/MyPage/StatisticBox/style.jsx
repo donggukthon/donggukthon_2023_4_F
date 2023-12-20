@@ -10,6 +10,7 @@ const Statistics = styled.div`
 
 const StatItem = styled.div`
   text-align: center;
+  display: flex;
 `;
 
 const StatNumber = styled.div`

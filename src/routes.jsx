@@ -6,6 +6,7 @@ import MainHome from "./pages/Home/MainHome";
 import HelpHome from "./pages/Help/HelpHome";
 import MyPage from "./pages/MyPage/Main";
 import MyVolunmate from "./pages/MyPage/MyVolunmate";
+import UserInfo from "./pages/MyPage/UserInfo";
 
 export const routes = [
   {
@@ -19,6 +20,7 @@ export const routes = [
       { path: "/myPage", element: <MyPage /> }, // 메인 페이지
       { path: "/helpHome", element: <HelpHome /> }, // 도와주세요 홈
       { path: "/myVolunmate", element: <MyVolunmate /> },
+      { path: "/userInfo", element: <UserInfo /> },
     ],
   },
 ];

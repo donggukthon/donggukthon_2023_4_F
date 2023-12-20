@@ -6,9 +6,7 @@ import { useEffect } from "react";
 import StatisticBox from "../../../components/MyPage/StatisticBox";
 import participants from "../../../assets/Icon/participants.svg";
 import pin from "../../../assets/Icon/pin.svg";
-
-const token =
-  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzb2NpYWxJZCI6IjExMTI4ODk4NzU0ODc4NDkxNjk0NSIsImlhdCI6MTcwMzAyOTQwOSwiZXhwIjoxNzAzMTE1ODA5fQ.LGWDzOhVatSSWAbGvJpdBAc-ByiqlUkhtfzUPhdILy0";
+import instance from "../../../api/axios";
 
 function MyPage() {
   const navigate = useNavigate();
@@ -22,12 +20,8 @@ function MyPage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      await axios
-        .get("https://volunmate.site/api/me", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
+      await instance
+        .get("https://volunmate.site/api/me")
         .then((response) => {
           setName(response.data.data.name);
           setDegree(response.data.data.degree);

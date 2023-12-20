@@ -1,30 +1,20 @@
 import { useEffect, useState } from "react";
 import { Style } from "./style";
-import axios from "axios";
-
-const token =
-  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzb2NpYWxJZCI6IjExMTI4ODk4NzU0ODc4NDkxNjk0NSIsImlhdCI6MTcwMzAyOTQwOSwiZXhwIjoxNzAzMTE1ODA5fQ.LGWDzOhVatSSWAbGvJpdBAc-ByiqlUkhtfzUPhdILy0";
+import instance from "../../../api/axios";
 
 const MyVolunmate = () => {
-  const [status, setStatus] = useState("");
-  const [length, setLength] = useState(0);
+  const [apiData, setApiData] = useState(null);
 
   const fetchData = async () => {
-    await axios
-      .get("https://volunmate.site/api/me/team", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+    await instance
+      .get("https://volunmate.site/api/me/team")
       .then((response) => {
-        setLength(response.data.data.res.length);
-        if (length == 0) {
-          setStatus(false);
-        } else setStatus(true);
+        setApiData(response.data.data);
       });
   };
   useEffect(() => {
     fetchData();
+    console.log(apiData);
   }, []);
   return (
     <Style.Container>
