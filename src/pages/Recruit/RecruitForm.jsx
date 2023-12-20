@@ -65,12 +65,6 @@ function RecruitForm() {
     display: modalState ? "block" : "none",
   };
 
-  // const onCompletePost = (data) => {
-  //   setModalState(false);
-  //   setInputAddress(data.address);
-  //   setInputZipCode(data.zonecode);
-  // };
-
   const handleClick = () => {
     thumbnailInput.current.click();
   };
@@ -114,13 +108,6 @@ function RecruitForm() {
     setShowConfirmModal(false);
     navigate(`/recruitHome`);
   };
-
-  // 날짜가져오는지 테스트
-  // const testCode = () => {
-  //   console.log("start:", start_date);
-  //   console.log("end:", end_date);
-  //   console.log("due:", due_date);
-  // };
 
   // Java의 LocalDateTime 형식에 맞게 날짜를 포맷팅하는 함수
   const formatDateForLocalDateTime = (date) => {
@@ -209,15 +196,6 @@ function RecruitForm() {
           <F.ColoredFormFont>활동 장소</F.ColoredFormFont>
           <F.FormFont>을 선택해주세요</F.FormFont>
         </div>
-        {/* <div>
-          <F.ColoredFormFont>우편번호</F.ColoredFormFont>
-          <ZipCodeInput
-            onChange={handleZipCode}
-            value={inputZipCodeValue}
-            placeholder="우편번호"
-            type="text"
-          />
-        </div> */}
         <div>
           <button onClick={() => setModalState(!modalState)}>주소 검색</button>
         </div>
