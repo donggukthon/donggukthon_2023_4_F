@@ -114,6 +114,13 @@ function RecruitForm() {
     navigate(`/recruitHome`);
   };
 
+  // 날짜가져오는지 테스트
+  const testCode = () => {
+    console.log("start:", start_date);
+    console.log("end:", end_date);
+    console.log("due:", due_date);
+  };
+
   return (
     <S.Container>
       <S.CardBox>
@@ -121,14 +128,20 @@ function RecruitForm() {
           <F.ColoredFormFont>봉사활동 기간</F.ColoredFormFont>
           <F.FormFont>을 입력해주세요</F.FormFont>
         </div>
-        <Calendar isRange={true} />
+        <Calendar
+          isRange={true}
+          startDate={start_date}
+          setStartDate={setStart_date}
+          endDate={end_date}
+          setEndDate={setEnd_date}
+        />
 
         <div>
           <F.ColoredFormFont>신청 마감 일자</F.ColoredFormFont>
           <F.FormFont>을 입력해주세요</F.FormFont>
         </div>
-        <Calendar isRange={false} />
-
+        <Calendar isRange={false} dueDate={due_date} setDueDate={setDue_date} />
+        <button onClick={testCode}>버튼</button>
         <div>
           <F.ColoredFormFont>활동 인원</F.ColoredFormFont>
           <F.FormFont>을 선택해주세요</F.FormFont>
