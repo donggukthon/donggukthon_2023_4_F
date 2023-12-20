@@ -1,18 +1,9 @@
 import styled from "styled-components";
 import volunmateLogo from "../../assets/Logo/volunmate.svg";
-import postWriteBtn from "../../assets/Button/postWrite.svg";
-import uploadPost from "../../assets/Button/uploadPost.svg";
-import applyBtn from "../../assets/Button/applyButton.svg";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  border: 1px solid black;
-  overflow-y: scroll;
-  height: 100%;
 `;
 
 const Logo = styled.img.attrs({
@@ -40,7 +31,7 @@ const BoldFont = styled.p`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  /* margin: 0 0 10px 0; */
+  margin: 0 0 10px 0;
 `;
 
 const LightFont = styled.p`
@@ -78,7 +69,7 @@ const CardBox = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: skyblue;
+  // background-color: skyblue;
   overflow-y: scroll;
   border: 1px solid black;
   /* position: relative; */
@@ -221,31 +212,4 @@ export const S = {
   RecruitTitleBox,
   BoldFont,
   LightFont,
-  CardBox,
-  WirteButton,
-};
-
-export const F = {
-  ColoredFormFont,
-  FormFont,
-  CalendarDiv,
-  UploadButton,
-};
-
-export const M = {
-  ModalBox,
-  RowBox,
-  ModalButton,
-  WhiteFont,
-};
-
-export const P = {
-  PostContainer,
-  PostImg,
-  ApplyButton,
-  PostUserSection,
-  Hr,
-  PostFont,
-  GoogleMapImg,
-  PostTextArea,
 };
