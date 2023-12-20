@@ -29,9 +29,19 @@ function RecruitForm() {
     setInputValue(event.target.value);
   };
 
+  // 입력값에 따른 handleChange
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
-    console.log("입력값", e.target.value);
+    console.log("title입력값", e.target.value);
+  };
+  const handleContentChange = (e) => {
+    setContent(e.target.value);
+    console.log("content입력값", e.target.value);
+  };
+  const handleTagChange = (e) => {
+    const inputTags = e.target.value;
+    const tagsArray = inputTags.split("#").filter((tag) => tag.trim() !== "");
+    setTag(tagsArray);
   };
 
   // 상태 변수 선언
@@ -156,7 +166,11 @@ function RecruitForm() {
           <F.ColoredFormFont>내용</F.ColoredFormFont>
           <F.FormFont>을 입력해주세요</F.FormFont>
         </div>
-        <textarea placeholder="1000자 이내 작성"></textarea>
+        <textarea
+          placeholder="1000자 이내 작성"
+          value={content}
+          onChange={handleContentChange}
+        ></textarea>
 
         <div>
           <F.ColoredFormFont>사진</F.ColoredFormFont>
@@ -175,10 +189,13 @@ function RecruitForm() {
         </button>
 
         <div>
-          <F.ColoredFormFont>태그</F.ColoredFormFont>
+          <F.ColoredFormFont onClick={console.log(tag)}>태그</F.ColoredFormFont>
           <F.FormFont>를 입력해주세요</F.FormFont>
         </div>
-        <input placeholder="#장충동#목도리#봉사자모집#겨울봉사"></input>
+        <input
+          placeholder="#장충동#목도리#봉사자모집#겨울봉사"
+          onChange={handleTagChange}
+        ></input>
 
         <F.UploadButton onClick={handleUploadClick} />
         <ConfirmModal
