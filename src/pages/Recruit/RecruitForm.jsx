@@ -6,6 +6,17 @@ import ZipCodeInput from "../../components/Recruit/Address/ZipCodeInput";
 import { useNavigate } from "react-router-dom";
 
 function RecruitForm() {
+  // 입력값 처리
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [tag, setTag] = useState([]);
+  const [start_date, setStart_date] = useState("");
+  const [end_date, setEnd_date] = useState("");
+  const [due_date, setDue_date] = useState("");
+  const [person, setPerson] = useState();
+  const [latitude, setLatitude] = useState();
+  const [longitude, setLongitude] = useState();
+
   const [inputValue, setInputValue] = "";
   const [modalState, setModalState] = useState(false); // 모달 상태 관리
   const [inputAddress, setInputAddress] = useState(""); // 주소 상태 관리
@@ -16,6 +27,11 @@ function RecruitForm() {
 
   const inputText = (event) => {
     setInputValue(event.target.value);
+  };
+
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
+    console.log("입력값", e.target.value);
   };
 
   // 상태 변수 선언
@@ -31,9 +47,10 @@ function RecruitForm() {
     setInputAddress(data.address);
   };
 
+  // 주소 검색 누르면 나오는 포스트카드
   const postCodeStyle = {
-    width: "400px",
-    height: "400px",
+    width: "300px",
+    height: "300px",
     display: modalState ? "block" : "none",
   };
 
@@ -77,13 +94,11 @@ function RecruitForm() {
   const handleUploadClick = () => {
     setShowConfirmModal(true);
   };
-
   const handleConfirm = () => {
     // POST 요청을 여기서 처리
     setShowConfirmModal(false);
     navigate(`/recruitPost`);
   };
-
   const handleCancel = () => {
     setShowConfirmModal(false);
     navigate(`/recruitHome`);
@@ -135,7 +150,7 @@ function RecruitForm() {
           <F.ColoredFormFont>제목</F.ColoredFormFont>
           <F.FormFont>을 입력해주세요</F.FormFont>
         </div>
-        <input></input>
+        <input value={title} onChange={handleTitleChange} />
 
         <div>
           <F.ColoredFormFont>내용</F.ColoredFormFont>
