@@ -3,11 +3,12 @@ import { S } from "./style";
 import { useNavigate } from "react-router-dom";
 import Card from "../../components/Home/Card";
 
-function MainHome() {
+function MyPage() {
   const navigate = useNavigate();
 
   return (
     <S.Container>
+      <div> MyPage 입니다. </div>
       <S.UserInfoContainer>
         <S.UserNameFont>이름</S.UserNameFont>
         <S.TempBox>
@@ -40,4 +41,4 @@ function MainHome() {
   );
 }
 
-export default MainHome;
+export default MyPage;
