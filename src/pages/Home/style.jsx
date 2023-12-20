@@ -84,6 +84,9 @@ const PostContainer = styled.div`
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
   white-space: nowrap; // 이 부분을 추가
   height: 167px;
   width: 400px; // 필요한 경우 너비 조정

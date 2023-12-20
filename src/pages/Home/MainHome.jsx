@@ -20,22 +20,21 @@ function MainHome() {
           <S.LocationIcon /> 내 위치 장충동 왕족발보쌈
         </S.UserLocationBox>
       </S.UserInfoContainer>
-      <Card />
+
       <S.TitleFont>주변에 도움이 필요한 곳📢</S.TitleFont>
       <S.PostContainer>
-        <S.HelpContainer>사진포스팅1</S.HelpContainer>
-        <S.HelpContainer>사진포스팅2</S.HelpContainer>
-        <S.HelpContainer>사진포스팅3</S.HelpContainer>
-        <S.HelpContainer>사진포스팅4</S.HelpContainer>
-        <S.HelpContainer>사진포스팅5</S.HelpContainer>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </S.PostContainer>
       <S.TitleFont>내 주변 HOT한 봉사 🔥</S.TitleFont>
       <S.PostContainer>
-        <S.HelpContainer>사진포스팅1</S.HelpContainer>
-        <S.HelpContainer>사진포스팅2</S.HelpContainer>
-        <S.HelpContainer>사진포스팅3</S.HelpContainer>
-        <S.HelpContainer>사진포스팅4</S.HelpContainer>
-        <S.HelpContainer>사진포스팅5</S.HelpContainer>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </S.PostContainer>
     </S.Container>
   );
