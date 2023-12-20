@@ -38,11 +38,18 @@ const LightFont = styled.p`
   line-height: normal;
   margin: 0;
 `;
-
+const WriteButton = styled.button`
+  width: 296px;
+  height: 43px;
+  background-color: #FA7070;
+  color: white;
+  font-weight: 700;
+`
 
 export const S = {
     Container,
     HelpTitleBox,
     BoldFont,
-    LightFont
+    LightFont,
+    WriteButton
 };

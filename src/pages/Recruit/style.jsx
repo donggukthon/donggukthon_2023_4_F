@@ -167,7 +167,7 @@ const PostImg = styled.img`
   width: 390px;
   height: 243px;
   background-color: #f3fffa;
-  alt="썸네일";
+  alt:"썸네일";
 `;
 
 // 신청하기 버튼

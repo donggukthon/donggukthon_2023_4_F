@@ -1,9 +1,15 @@
 import React from "react";
 import { S } from "./style";
-import HelpCard from "../../components/Help/HelpCard"
+import HelpCard from "../../components/Help/HelpCard";
 import { useNavigate } from "react-router-dom";
 
 function HelpHome() {
+    const navigate = useNavigate();
+
+    const handleWriteButtonClick = () => {
+        // /homePost 경로로 이동
+        navigate("/helpPost");
+    };
 
     return (
         <S.Container>
@@ -17,7 +23,10 @@ function HelpHome() {
             <HelpCard />
             <HelpCard />
             <HelpCard />
-            <HelpCard />
+            {/* WriteButton에 onClick 이벤트 추가 */}
+            <S.WriteButton onClick={handleWriteButtonClick}>
+                도움 요청하기
+            </S.WriteButton>
         </S.Container>
     );
 }
