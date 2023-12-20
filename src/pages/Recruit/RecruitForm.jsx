@@ -4,14 +4,15 @@ import DaumPostcode from "react-daum-postcode";
 import { S, F, M } from "./style";
 import ZipCodeInput from "../../components/Recruit/Address/ZipCodeInput";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function RecruitForm() {
   // 입력값 처리
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [tag, setTag] = useState([]);
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
   const [dueDate, setDueDate] = useState(new Date());
   const [person, setPerson] = useState();
   const [latitude, setLatitude] = useState();
@@ -24,10 +25,6 @@ function RecruitForm() {
   const [showConfirmModal, setShowConfirmModal] = useState(false); // 모달 관리
   const thumbnailInput = useRef();
   const navigate = useNavigate();
-
-  const inputText = (event) => {
-    setInputValue(event.target.value);
-  };
 
   // 입력값에 따른 handleChange
   const handleTitleChange = (e) => {
@@ -42,6 +39,10 @@ function RecruitForm() {
     const inputTags = e.target.value;
     const tagsArray = inputTags.split("#").filter((tag) => tag.trim() !== "");
     setTag(tagsArray);
+  };
+  const handlePersonChange = (e) => {
+    setPerson(e.target.value);
+    console.log("person입력값", e.target.value);
   };
 
   // 상태 변수 선언
@@ -130,6 +131,7 @@ function RecruitForm() {
     return `${year}-${month}-${day}T00:00:00`;
   };
 
+  // 달력 시간 localDataTime 관련
   const submitData = () => {
     const formattedStartDate = formatDateForLocalDateTime(startDate);
     const formattedEndDate = formatDateForLocalDateTime(endDate);
@@ -138,6 +140,42 @@ function RecruitForm() {
     // 여기에서 서버로 데이터 전송
     console.log(formattedStartDate, formattedEndDate, formattedDueDate);
     // 예: axios.post('/api/data', { formattedStartDate, formattedEndDate, formattedDueDate });
+  };
+
+  // 주소 위도 경도 관련
+  const API_KEY = "AIzaSyCjXg90oMZF6DW0GoDdlFmOwtRFGGYY6DI";
+  const convertAddressToCoords = async (address) => {
+    try {
+      const response = await axios.get(
+        `https://maps.googleapis.com/maps/api/geocode/json`,
+        {
+          params: {
+            address: address,
+            key: API_KEY, // 여기에 발급받은 API 키를 입력합니다.
+          },
+        }
+      );
+
+      if (response.data.status === "OK") {
+        const coords = response.data.results[0].geometry.location;
+        console.log(coords); // 로그를 여기로 이동
+        return coords; // { lat: 위도, lng: 경도 }
+      } else {
+        console.log(response.data.status);
+        console.log(response.data);
+        throw new Error("주소 변환에 실패했습니다.");
+      }
+    } catch (error) {
+      console.error("Geocoding Error:", error);
+      return null;
+    }
+  };
+
+  const handleTest = (inputAddress) => {
+    convertAddressToCoords(inputAddress).then((coords) => {
+      console.log(coords); // 위도와 경도 출력
+      console.log("fs");
+    });
   };
 
   return (
@@ -165,13 +203,13 @@ function RecruitForm() {
           <F.ColoredFormFont>활동 인원</F.ColoredFormFont>
           <F.FormFont>을 선택해주세요</F.FormFont>
         </div>
-        <input value={inputValue} onChange={inputText} />
+        <input value={person} onChange={handlePersonChange} />
 
         <div>
           <F.ColoredFormFont>활동 장소</F.ColoredFormFont>
           <F.FormFont>을 선택해주세요</F.FormFont>
         </div>
-        <div>
+        {/* <div>
           <F.ColoredFormFont>우편번호</F.ColoredFormFont>
           <ZipCodeInput
             onChange={handleZipCode}
@@ -179,7 +217,7 @@ function RecruitForm() {
             placeholder="우편번호"
             type="text"
           />
-        </div>
+        </div> */}
         <div>
           <button onClick={() => setModalState(!modalState)}>주소 검색</button>
         </div>
@@ -187,6 +225,7 @@ function RecruitForm() {
         <F.CalendarDiv>{inputAddress}</F.CalendarDiv>
         {/* 상세 주소 넣을 input */}
         <input></input>
+        <button onClick={() => handleTest(inputAddress)}>버튼</button>
 
         <div>
           <F.ColoredFormFont>제목</F.ColoredFormFont>
