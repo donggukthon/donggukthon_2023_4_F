@@ -27,6 +27,14 @@ function MainHome() {
         <S.HelpContainer>사진포스팅4</S.HelpContainer>
         <S.HelpContainer>사진포스팅5</S.HelpContainer>
       </S.PostContainer>
+      <S.TitleFont>내 주변 HOT한 봉사 🔥</S.TitleFont>
+      <S.PostContainer>
+        <S.HelpContainer>사진포스팅1</S.HelpContainer>
+        <S.HelpContainer>사진포스팅2</S.HelpContainer>
+        <S.HelpContainer>사진포스팅3</S.HelpContainer>
+        <S.HelpContainer>사진포스팅4</S.HelpContainer>
+        <S.HelpContainer>사진포스팅5</S.HelpContainer>
+      </S.PostContainer>
     </S.Container>
   );
 }
