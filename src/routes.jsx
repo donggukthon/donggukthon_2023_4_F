@@ -19,7 +19,7 @@ export const routes = [
       { path: "/modify", element: <Modify /> },
       { path: "/myVolunteer_main", element: <MyV_main /> },
       { path: "/registration", element: <Registration /> },
-      { path: "/recruitHome", element: <LoginPage /> }, // 팀원모집 리스트 페이지
+      { path: "/loginPage", element: <LoginPage /> }, // 팀원모집 리스트 페이지
       { path: "/recruitForm", element: <RecruitForm /> }, // 팀원모집 글 쓰기 페이지
       { path: "/recruitPost", element: <RecruitPost /> }, // 팀원모집 디테일 페이지
       { path: "/mainHome", element: <MainHome /> }, // 메인 페이지
