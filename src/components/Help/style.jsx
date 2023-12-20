@@ -11,7 +11,6 @@ const Container = styled.div`
 const CardContainer = styled.div`
   width: 330px;
   height: 142px;
-  background-color: yellow;
   /* margin: auto; */
   display: flex;
   justify-content: flex-start;
@@ -52,6 +51,7 @@ const LightFont = styled.p`
 const TextContainer = styled.div`
   width: 100%;
   height: 80%;
+  margin-left: 20px;
 `;
 
 const TemperContainer = styled.div`
@@ -60,27 +60,27 @@ const TemperContainer = styled.div`
 `;
 
 const LocationIcon = styled.img.attrs({
-  src: location,
+    src: location,
 })`
   width: 10px;
   height: 10px;
 `;
 
 const ClockIcon = styled.img.attrs({
-  src: clock,
+    src: clock,
 })`
   width: 10px;
   height: 10px;
 `;
 
 export const S = {
-  Container,
-  CardContainer,
-  BoldFont,
-  LightFont,
-  CardImg,
-  TextContainer,
-  LocationIcon,
-  ClockIcon,
-  TemperContainer,
+    Container,
+    CardContainer,
+    BoldFont,
+    LightFont,
+    CardImg,
+    TextContainer,
+    LocationIcon,
+    ClockIcon,
+    TemperContainer,
 };
