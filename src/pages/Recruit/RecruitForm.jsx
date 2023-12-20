@@ -82,7 +82,7 @@ function RecruitForm() {
         },
       };
       // 이미지 업로드 중
-      const response = await axios.post(`api url`, formData, config); // api 통신
+      const response = await axios.post(`api/url`, formData, config); // api 통신
       // 이미지 업로드 성공
       dispatch(
         setWriteContent({
@@ -146,6 +146,9 @@ function RecruitForm() {
       if (response.data.status === "OK") {
         const coords = response.data.results[0].geometry.location;
         console.log(coords); // 로그를 여기로 이동
+        setLatitude(coords.lat);
+        setLongitude(coords.lng);
+        console.log("모냐 ㅅㅂ ", latitude, longitude);
         return coords; // { lat: 위도, lng: 경도 }
       } else {
         console.log(response.data.status);
@@ -161,8 +164,54 @@ function RecruitForm() {
   const handleTest = (inputAddress) => {
     convertAddressToCoords(inputAddress).then((coords) => {
       console.log(coords); // 위도와 경도 출력
-      console.log("fs");
     });
+  };
+
+  // 서버로 전송 post
+  // JSON 데이터와 이미지를 함께 업로드하는 함수
+  const saveDataWithImage = async () => {
+    try {
+      // FormData 객체 생성
+      const formData = new FormData();
+
+      // 이미지 추가
+      if (thumbnailInput.current.files) {
+        for (let file of thumbnailInput.current.files) {
+          formData.append("image", file); // 이미지 파일 추가
+        }
+      }
+
+      // JSON 데이터 추가
+      // formData.append 함수를 사용하여 JSON 형태의 문자열 데이터를 추가합니다.
+      // 서버 측에서 이를 적절히 처리할 수 있어야 합니다.
+      formData.append(
+        "data",
+        JSON.stringify({
+          title,
+          content,
+          tag,
+          startDate: formatDateForLocalDateTime(startDate),
+          endDate: formatDateForLocalDateTime(endDate),
+          dueDate: formatDateForLocalDateTime(dueDate),
+          person,
+          latitude,
+          longitude,
+        })
+      );
+
+      // Axios를 사용하여 서버에 POST 요청
+      const response = await axios.post(`api/url`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      // 성공 시 로직 (예시: 상태 업데이트)
+      console.log(response.data);
+      // 다른 상태 업데이트 로직이나 응답 처리를 여기에 추가합니다.
+    } catch (error) {
+      console.error("Upload Error:", error);
+    }
   };
 
   return (
@@ -267,7 +316,7 @@ function RecruitForm() {
         <p>글을 등록하시겠습니까?</p>
         <M.RowBox>
           <M.ModalButton onClick={onConfirm}>
-            <M.WhiteFont>등록할게요</M.WhiteFont>
+            <M.WhiteFont onClick={saveDataWithImage}>등록할게요</M.WhiteFont>
           </M.ModalButton>
           <M.ModalButton onClick={onCancel}>
             <M.WhiteFont>하지 않는다</M.WhiteFont>
