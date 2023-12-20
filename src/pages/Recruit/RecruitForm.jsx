@@ -6,7 +6,7 @@ import ZipCodeInput from "../../components/Recruit/Address/ZipCodeInput";
 import { useNavigate } from "react-router-dom";
 
 function RecruitForm() {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = "";
   const [modalState, setModalState] = useState(false); // 모달 상태 관리
   const [inputAddress, setInputAddress] = useState(""); // 주소 상태 관리
   const [inputZipCode, setInputZipCode] = useState(""); // 우편번호 상태 관리

@@ -16,6 +16,7 @@ const CardContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  flex-direction: row;
 `;
 
 const CardImg = styled.img`
@@ -23,6 +24,7 @@ const CardImg = styled.img`
   height: 106px;
   flex-shrink: 0;
   border: 1px solid black;
+  alt="포스트 카드 이미지";
 `;
 
 const BoldFont = styled.p`
@@ -52,6 +54,11 @@ const TextContainer = styled.div`
   height: 80%;
 `;
 
+const TemperContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const LocationIcon = styled.img.attrs({
   src: location,
 })`
@@ -75,4 +82,5 @@ export const S = {
   TextContainer,
   LocationIcon,
   ClockIcon,
+  TemperContainer,
 };
