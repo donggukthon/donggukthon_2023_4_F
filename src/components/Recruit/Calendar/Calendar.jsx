@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Calendar.css";
+import { ko } from "date-fns/esm/locale";
 
 function Calendar({
   isRange,
@@ -30,11 +31,13 @@ function Calendar({
     if (isRange) {
       const [start, end] = dates;
       if (start && end) {
+        // 두 날짜 모두 선택된 경우
         setStartDate(start);
         setEndDate(end);
-        setShowCalendar(false);
+        setShowCalendar(false); // 날짜 선택 완료 후 달력 닫기
       }
-    } else {
+    } else if (isRange == false) {
+      // 단일 날짜 선택 모드
       setDueDate(dates);
       setShowCalendar(false);
     }
@@ -70,12 +73,13 @@ function Calendar({
       <button onClick={toggleCalendar}>{displayDate()}</button>
       {showCalendar && (
         <DatePicker
-          selected={isRange ? new Date(startDate) : new Date(dueDate)}
+          selected={startDate ? new Date(startDate) : new Date(dueDate)}
           onChange={handleChange}
-          startDate={isRange ? new Date(startDate) : null}
-          endDate={isRange ? new Date(endDate) : null}
+          startDate={startDate ? new Date(startDate) : null}
+          endDate={endDate ? new Date(endDate) : null}
           selectsRange={isRange}
           inline
+          locale={ko}
         />
       )}
     </div>
