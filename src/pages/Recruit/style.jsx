@@ -78,7 +78,7 @@ const CardBox = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: skyblue;
+  // background-color: skyblue;
   overflow-y: scroll;
   border: 1px solid black;
   /* position: relative; */

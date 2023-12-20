@@ -1,7 +1,6 @@
 import React from "react";
 import "./loginError.css";
 import errorImg from "../../assets/Icon/error.svg";
-import errorBox from "../../assets/box/errorBox.svg";
 
 function LoginError() {
     return (

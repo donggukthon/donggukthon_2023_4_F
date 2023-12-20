@@ -6,12 +6,14 @@ import LoginPage from "./pages/login/login"
 import Registration from "./pages/registration/registration";
 import LoginError from "./pages/loginError/loginError";
 import MyV_main from "./pages/myVolunteering/main/main";
+import Modify from "./pages/modify/modify";
 
 export const routes = [
   {
     path: "/",
     element: <GlobalLayout />,
     children: [
+      { path: "/modify", element: <Modify /> },
       { path: "/myVolunteer_main", element: <MyV_main /> },
       { path: "/loginError", element: <LoginError /> },
       { path: "/registration", element: <Registration /> },

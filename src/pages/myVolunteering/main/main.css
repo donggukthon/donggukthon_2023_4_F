@@ -21,3 +21,16 @@
     top: auto;
     left: 27px;
 }
+
+
+
+.name {
+    width: 123px;
+    height: 36.235px;
+    color: #000;
+    font-family: Inter;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}

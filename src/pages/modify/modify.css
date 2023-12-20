@@ -1,10 +1,10 @@
-.Containner2-registration,
-.Containner3-registration,
-.Containner4-registration {
+.Containner2-modify,
+.Containner3-modify,
+.Containner4-modify {
     padding: 20px;
 }
 
-.Containner1-registration {
+.Containner1-modify {
     display: flex;
     width: 100%;
     height: 700px;
@@ -14,7 +14,7 @@
     padding: 5px;
 }
 
-.Containner2-registration {
+.Containner2-modify {
     display: flex;
     width: 100%;
     height: 90px;
@@ -23,7 +23,7 @@
     flex-direction: column;
 }
 
-.Containner3-registration {
+.Containner3-modify {
     display: flex;
     width: 100%;
     height: 110px;
@@ -33,7 +33,7 @@
 
 }
 
-.Containner4-registration {
+.Containner4-modify {
     display: flex;
     width: 100%;
     height: 110px;
@@ -42,8 +42,8 @@
     flex-direction: column;
 }
 
-.Containner5-registration,
-.Containner6-registration {
+.Containner5-modify,
+.Containner6-modify {
     display: flex;
     width: 300px;
     height: 30px;
@@ -52,11 +52,11 @@
     flex-direction: row;
 }
 
-.Containner6-registration {
+.Containner6-modify {
     width: 325px;
 }
 
-.Containner7-registration {
+.Containner7-modify {
     display: flex;
     width: 100%;
     height: 80px;
@@ -132,71 +132,4 @@ input {
     font-style: normal;
     font-weight: 400;
     line-height: 53px;
-}
-
-
-
-.errorBox {
-    width: 333px;
-    height: 176px;
-    position: fixed;
-    top: 35%;
-    left: 5%;
-    z-index: 100;
-    background-color: #fff;
-    border: 1px solid #878D91;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-
-
-}
-
-.message {
-    color: #FA7070;
-    text-align: center;
-    font-family: Inter;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    position: absolute;
-    top: 23px;
-    left: 108px;
-}
-
-.errorLogo {
-    position: absolute;
-    top: 34px;
-    left: 40px;
-}
-
-.confirmButton {
-    width: 304px;
-    height: 42px;
-    border-radius: 4.459px;
-    background: #878D91;
-    color: #FFF;
-    text-align: center;
-    font-family: Inter;
-    font-size: 10.731px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 40px;
-    position: absolute;
-    top: 122px;
-    left: 15px;
-}
-
-.blurred-background {
-    filter: blur(5px);
-    pointer-events: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
 }
