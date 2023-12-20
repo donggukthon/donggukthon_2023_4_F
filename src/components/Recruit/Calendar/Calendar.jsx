@@ -1,5 +1,5 @@
-import DatePicker from "react-datepicker";
 import React, { useState } from "react";
+import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Calendar.css";
 
@@ -13,26 +13,30 @@ function Calendar({
   setDueDate,
 }) {
   const [showCalendar, setShowCalendar] = useState(false);
-  const [formattedDate, setFormattedDate] = useState("");
 
-  const formatDate = (date) => {
-    return date
-      ? `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`
-      : "";
+  // Java의 LocalDateTime 형식에 맞게 날짜를 포맷팅하는 함수
+  const formatDateForLocalDateTime = (date) => {
+    if (!date) return "";
+
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, "0");
+    const day = date.getDate().toString().padStart(2, "0");
+
+    return `${year}-${month}-${day}T00:00:00`;
   };
 
   // 선택된 날짜를 기반으로 상태를 업데이트하는 함수
   const handleChange = (dates) => {
     if (isRange) {
       const [start, end] = dates;
-      setStartDate(start);
-      setEndDate(end);
       if (start && end) {
-        setShowCalendar(false); // 달력 닫기
+        setStartDate(start);
+        setEndDate(end);
+        setShowCalendar(false);
       }
     } else {
       setDueDate(dates);
-      setShowCalendar(false); // 달력 닫기
+      setShowCalendar(false);
     }
   };
 
@@ -42,6 +46,16 @@ function Calendar({
 
   // 날짜를 문자열로 변환하여 표시하는 함수
   const displayDate = () => {
+    const formatDate = (date) => {
+      if (!date) return "";
+
+      const year = date.getFullYear();
+      const month = (date.getMonth() + 1).toString().padStart(2, "0");
+      const day = date.getDate().toString().padStart(2, "0");
+
+      return `${year}-${month}-${day}`;
+    };
+
     if (isRange) {
       return startDate && endDate
         ? `${formatDate(startDate)} ~ ${formatDate(endDate)}`
@@ -56,10 +70,10 @@ function Calendar({
       <button onClick={toggleCalendar}>{displayDate()}</button>
       {showCalendar && (
         <DatePicker
-          selected={isRange ? startDate : dueDate}
+          selected={isRange ? new Date(startDate) : new Date(dueDate)}
           onChange={handleChange}
-          startDate={isRange ? startDate : null}
-          endDate={isRange ? endDate : null}
+          startDate={isRange ? new Date(startDate) : null}
+          endDate={isRange ? new Date(endDate) : null}
           selectsRange={isRange}
           inline
         />

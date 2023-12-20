@@ -10,9 +10,9 @@ function RecruitForm() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [tag, setTag] = useState([]);
-  const [start_date, setStart_date] = useState("");
-  const [end_date, setEnd_date] = useState("");
-  const [due_date, setDue_date] = useState("");
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+  const [dueDate, setDueDate] = useState(new Date());
   const [person, setPerson] = useState();
   const [latitude, setLatitude] = useState();
   const [longitude, setLongitude] = useState();
@@ -115,10 +115,29 @@ function RecruitForm() {
   };
 
   // 날짜가져오는지 테스트
-  const testCode = () => {
-    console.log("start:", start_date);
-    console.log("end:", end_date);
-    console.log("due:", due_date);
+  // const testCode = () => {
+  //   console.log("start:", start_date);
+  //   console.log("end:", end_date);
+  //   console.log("due:", due_date);
+  // };
+
+  // Java의 LocalDateTime 형식에 맞게 날짜를 포맷팅하는 함수
+  const formatDateForLocalDateTime = (date) => {
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, "0");
+    const day = date.getDate().toString().padStart(2, "0");
+
+    return `${year}-${month}-${day}T00:00:00`;
+  };
+
+  const submitData = () => {
+    const formattedStartDate = formatDateForLocalDateTime(startDate);
+    const formattedEndDate = formatDateForLocalDateTime(endDate);
+    const formattedDueDate = formatDateForLocalDateTime(dueDate);
+
+    // 여기에서 서버로 데이터 전송
+    console.log(formattedStartDate, formattedEndDate, formattedDueDate);
+    // 예: axios.post('/api/data', { formattedStartDate, formattedEndDate, formattedDueDate });
   };
 
   return (
@@ -130,18 +149,18 @@ function RecruitForm() {
         </div>
         <Calendar
           isRange={true}
-          startDate={start_date}
-          setStartDate={setStart_date}
-          endDate={end_date}
-          setEndDate={setEnd_date}
+          startDate={startDate}
+          setStartDate={setStartDate}
+          endDate={endDate}
+          setEndDate={setEndDate}
         />
 
         <div>
           <F.ColoredFormFont>신청 마감 일자</F.ColoredFormFont>
           <F.FormFont>을 입력해주세요</F.FormFont>
         </div>
-        <Calendar isRange={false} dueDate={due_date} setDueDate={setDue_date} />
-        <button onClick={testCode}>버튼</button>
+        <Calendar isRange={false} dueDate={dueDate} setDueDate={setDueDate} />
+        <button onClick={submitData}>버튼</button>
         <div>
           <F.ColoredFormFont>활동 인원</F.ColoredFormFont>
           <F.FormFont>을 선택해주세요</F.FormFont>
