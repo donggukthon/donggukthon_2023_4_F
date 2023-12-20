@@ -49,7 +49,7 @@ function RecruitPost() {
           <p>2023-12-02 부터 2023-12-02 까지</p>
           <p>0일동안 진행 예정</p>
           <P.PostFont>봉사 장소</P.PostFont>
-          <p>서울특별시 중구 필동</p>
+          <p>서울특별시 중구 필동로 1가</p>
           {/* <P.GoogleMapImg /> */}
           <Googlemap />
         </P.PostUserSection>
